@@ -14,6 +14,7 @@ public class CompletableFutureArtistAnalyser implements ArtistAnalyzer {
         this.artistLookupService = artistLookupService;
     }
 
+    @Override
     public void isLargerGroup(String artistName, String otherArtistName, Consumer<Boolean> handler) {
         CompletableFuture<Long> otherArtistMemberCount = CompletableFuture.supplyAsync(() -> getNumberOfMembers(otherArtistName));
 

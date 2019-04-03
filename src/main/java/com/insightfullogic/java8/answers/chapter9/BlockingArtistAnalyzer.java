@@ -5,6 +5,10 @@ import com.insightfullogic.java8.examples.chapter1.Artist;
 import java.util.function.Function;
 
 // BEGIN class
+
+/**
+ *
+ */
 public class BlockingArtistAnalyzer {
 
     private final Function<String, Artist> artistLookupService;
@@ -17,6 +21,11 @@ public class BlockingArtistAnalyzer {
         return getNumberOfMembers(artistName) > getNumberOfMembers(otherArtistName);
     }
 
+    /**
+     * comment
+     * @param artistName
+     * @return
+     */
     private long getNumberOfMembers(String artistName) {
         return artistLookupService.apply(artistName)
                                   .getMembers()

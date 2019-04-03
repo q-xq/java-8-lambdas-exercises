@@ -13,6 +13,7 @@ public class CallbackArtistAnalyser implements ArtistAnalyzer {
         this.artistLookupService = artistLookupService;
     }
 
+    @Override
     public void isLargerGroup(String artistName, String otherArtistName, Consumer<Boolean> handler) {
         boolean isLarger = getNumberOfMembers(artistName) > getNumberOfMembers(otherArtistName);
         handler.accept(isLarger);
